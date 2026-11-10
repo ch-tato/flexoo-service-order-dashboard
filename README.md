@@ -1,9 +1,11 @@
-# flexoo-service-order-dashboard
-
-Flexoo Service Order Dashboard -- Flexoo Mini Challenge
+# Flexoo Service Order Dashboard
 
 A static, no-build service ordering dashboard for Flexoo, the student-led software house of Informatics ITS.
 Browse the catalog, open a service, pick a package and add-ons, and send an order request.
+
+## Access it
+
+[flexoo-service-order-dashboard.netlify.app](https://flexoo-service-order-dashboard.netlify.app)
 
 ## Run it
 
