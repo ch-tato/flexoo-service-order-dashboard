@@ -213,3 +213,101 @@ content: ""; position:absolute;top:-6px; left: -6px;
   }
       to {opacity : 1;  transform:none; }
 }
+.nav{
+		   position: fixed;
+  inset:0 0 auto 0;  z-index : 100; height:  var(--navH);background:  var(--cScrim);-webkit-backdrop-filter: blur(12px);backdrop-filter: blur(12px);  border-bottom: 1px solid transparent;
+    transition: border-color var(--DUR),background-color var(--DUR);
+}
+.nav.scrolled  {
+	border-bottom-color: var(--clin_2);  background:  rgba(18, 18, 17, 0.94)
+}
+.nav-inner  {
+    width:  min(var(--con_1),100% - 2 * var(--GUTTER));
+   margin-inline: auto;
+    height:  100%;display:flex;
+  align-items: center;
+		gap: var(--s_7)
+}
+.brand {
+display: flex;align-items:  center;  gap:var(--val39);  min-height : 44px;
+
+flex: none;
+}
+
+
+.brand-logo  {
+		width:  32px;
+height:  32px;
+   flex: none
+	}
+.brand-logo img  {width: 32px;height : 32px; }
+
+.brand-text
+{
+  line-height : 1.15;
+   }
+
+
+.brand-name  {
+font-family: var(--displayFont); font-size : var(--fs_md);font-weight: 700;
+letter-spacing:  0.14em
+  }
+
+.brand-sub{font-size: var(--fsxs_2); font-weight:  500; color : var(--3TextC);}
+.nav-links {
+  display: flex;
+  align-items:center; gap: var(--s_1)
+}
+
+.nav-link {
+position: relative;  display:  inline-flex;align-items: center;
+   min-height:44px; padding: 0 var(--val39);  font-size:var(--FSSM);
+   font-weight:  500;color: var(--c_text_2);
+      transition:color var(--DUR);
+}
+.nav-link::after {
+		content : ""; position:absolute;  left : var(--val39); right:var(--val39);
+bottom:  8px;
+       height: 2px; background:  var(--v9); transform:scaleX(0);
+  		transform-origin:left; transition:  transform var(--DUR) var(--outEase)
+  }
+
+.nav-link:hover  {
+color:  var(--cText);
+		}
+
+.nav-link:hover::after  {
+
+    transform: scaleX(1)
+}
+
+.nav-right {
+  margin-left: auto; display: flex;align-items : center;
+       gap:  var(--s4_2)
+}
+.nav-cta {min-height:44px;  padding:0 var(--s4_2);  font-size:var(--FSSM)}
+.client-chip {
+		display:flex;  align-items : center;  gap: var(--2S);
+		min-height:  44px; padding: 4px var(--val39) 4px 4px;border: 1px solid var(--clin_2);border-radius:var(--pillR); background:  var(--surfaceC);  text-align : left;  transition: border-color var(--DUR);
+}
+.client-chip:hover {border-color: var(--CLINESTRONG);}
+.avatar {
+width:34px;
+height: 34px;  border-radius : 50%;
+   background:var(--v9);
+color:var(--clr15); display:  grid;
+place-items:  center;
+  font-size: var(--fsxs_2);  font-weight:  700;flex: none;
+  }
+.client-chip .cc-name  {
+		font-size : var(--FSSM);
+   font-weight: 600;  line-height: 1.2;
+}
+
+.client-chip .cc-role  {
+   font-size:  var(--fsxs_2);
+	color:var(--3TextC);
+   line-height : 1.2;
+}
+
+
