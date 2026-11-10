@@ -1,0 +1,182 @@
+#sd-root{
+min-height: 100vh
+}
+
+.sd-hero{padding:  calc(var(--navH) + var(--8S)) 0 var(--s_7);  border-bottom: 1px solid var(--clin_2); }
+.sd-crumbs  {
+	display : flex;
+flex-wrap: wrap;
+    align-items:  center;
+   gap: var(--2S);font-size:var(--FSSM); color:  var(--3TextC);
+		margin-bottom:var(--s6)
+}
+
+.sd-crumbs a{
+color: var(--c_text_2); padding-block:  var(--s_1);
+    transition: color var(--DUR);
+}
+
+.sd-crumbs a:hover  {
+	color: var(--cText);
+   text-decoration: underline;
+text-underline-offset: 3px;
+}
+.sd-crumbs [aria-current]  {color: var(--cText);  font-weight:  500; }
+.sd-hero-head  {
+  display:  flex;
+  align-items: center;
+  gap:var(--val39);margin-bottom: var(--s4_2);
+  }
+.sd-icon
+{
+		width: 48px;height: 48px;
+      border-radius : var(--rMd);display: grid;  place-items: center;
+  background:  var(--v9);  color: var(--clr15);
+    flex:  none;
+}
+.sd-icon .icon-lg
+{
+   width:24px; height:24px;
+  }
+
+.sd-hero-head .sc-cat  {
+
+	  font-size: var(--FSSM);
+color : var(--c_text_2)
+  }
+
+.sd-title
+{
+		font-family: var(--displayFont);
+font-size: var(--fs4xl);  font-weight: 700; letter-spacing: var(--TRDISPLAY);  line-height : var(--tightLh);
+max-width:20ch;
+  margin-bottom:var(--s4_2);text-wrap : balance;
+}
+.sd-tagline{
+color: var(--c_text_2); font-size:  var(--fs_md);  max-width: 60ch;
+margin-bottom: var(--S5);
+}
+.sd-facts
+{
+  display:flex;flex-wrap:wrap; align-items:  center;
+	   row-gap : var(--2S); margin-bottom:  var(--S5);
+}
+
+
+.sd-fact
+{
+	display: inline-flex;
+  align-items:  center;
+
+		gap : var(--2S);
+   padding: 0 var(--s4_2);border-left:1px solid var(--clin_2); font-size:var(--FSSM); color:  var(--c_text_2)
+}
+
+
+.sd-fact:first-child {
+	padding-left: 0;border-left:  0
+}
+.sd-fact .icon-sm {
+color:var(--3TextC)
+}
+
+.sd-rating .icon-sm
+{
+  color : var(--v9)
+    }
+.sd-rating strong {
+  color: var(--cText);
+	    font-weight:600;  font-variant-numeric: tabular-nums
+  }
+
+
+.sd-rating em  {font-style: normal;  color:  var(--3TextC)}
+
+.sd-stack {
+display:flex; flex-wrap:wrap;  align-items : center;
+  gap: var(--2S)
+}
+.sd-stack-label {
+    font-size: var(--FSSM);color:  var(--3TextC);margin-right:var(--s_1);
+}
+.sd-tag {
+  font-size : var(--fsxs_2);
+   font-weight : 500;
+	  padding: var(--s_1) 10px; border-radius : var(--RSM);
+background: var(--surfaceC);
+		border: 1px solid var(--clin_2);
+		color: var(--cText);
+}
+
+.sd-hero-cta{
+			display : flex;
+align-items: center;
+flex-wrap: wrap;  gap : var(--S5);  margin-top:  var(--s6); padding-top : var(--S5); border-top : 1px solid var(--clin_2);
+}
+.sd-from
+{
+		font-family:var(--displayFont);  font-size:  var(--val27);
+		font-weight:600;  line-height: 1.2;
+
+  font-variant-numeric:tabular-nums;
+}
+.sd-from small  {
+display: block;font-family:var(--thing21);font-size: var(--fsxs_2);
+		font-weight: 500;  color : var(--3TextC);
+}
+.sd-notfound{
+	padding:  var(--s6) 0;
+}
+.sd-body {padding-top : var(--8S) }
+
+.sd-layout {
+
+   display: grid; grid-template-columns: minmax(0,1fr) 340px;
+   gap: var(--8S) var(--s_7);  align-items:start
+}
+
+
+.sd-main  {
+   display:flex;  flex-direction : column; gap: var(--8S); min-width:  0
+  }
+
+.sd-block {
+  scroll-margin-top: calc(var(--navH) + var(--S5));
+}
+.sd-block .eyebrow {margin-bottom:var(--2S); }
+
+
+.sd-h2 {
+		font-family : var(--displayFont);  font-size:  var(--fs2xl_2); font-weight: 700;letter-spacing: var(--trHead);line-height:var(--tmp33); margin-bottom : var(--S5)
+}
+
+.sd-p  {
+		color: var(--c_text_2);
+	font-size:var(--fsBase);
+line-height: 1.75;  max-width:68ch
+}
+
+.sd-p+.sd-p  {
+    margin-top : var(--s4_2)
+}
+.sd-check {
+	width: 20px;
+height: 20px; border-radius:  6px;  display:  inline-grid;place-items: center;  flex : none;
+			background:var(--cYellowTint); color : var(--v9);
+}
+.sd-check .icon-sm {
+	width : 12px;
+   height: 12px;
+  }
+.sd-includes{
+display:grid;
+  grid-template-columns : 1fr 1fr;
+  column-gap : var(--s6);
+  border-top:  1px solid var(--clin_2);
+}
+.sd-includes li{
+  display:flex;
+	align-items: center; gap:var(--val39);
+padding:  var(--val39) 0;
+  border-bottom: 1px solid var(--clin_2);  font-size: var(--fsBase);
+}
