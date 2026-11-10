@@ -538,3 +538,41 @@ from  {
 }
 }
 
+.stats-wrap {border-block:  1px solid var(--clin_2);background:  var(--c_bg_2); }
+
+
+.stats  {
+    display: grid;grid-template-columns:repeat(4,1fr)
+}
+
+
+.stat {
+padding : var(--s6) var(--S5); border-left: 1px solid var(--clin_2);
+}
+.stat:first-child
+{
+   border-left : 0;
+
+padding-left:0
+}
+.stat-num  {
+    font-family : var(--displayFont);font-size:var(--FS3XL);font-weight : 600;
+  letter-spacing: var(--TRDISPLAY);line-height : 1; margin-bottom : var(--2S);
+font-variant-numeric : tabular-nums;
+}
+
+.stat-num em {
+   font-style:normal;color : var(--v9)
+}
+
+
+.stat-label
+{
+  font-size : var(--FSSM);
+color: var(--3TextC);
+}
+.stat-label .star-inline
+{
+  color:  var(--v9);width : 13px;
+   height: 13px;vertical-align: -2px;
+}
