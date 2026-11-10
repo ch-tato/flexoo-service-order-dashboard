@@ -958,3 +958,52 @@ width:32px;height: 32px
 }
 
 .t-card:first-child .t-avatar {background:  var(--v9);border-color:var(--v9);color:var(--clr15); }
+.cta-banner{
+  padding-top:0
+}
+
+
+.cta-inner
+{
+--c_focus:  var(--cBg);
+		display : flex; align-items: center;
+justify-content: space-between;
+
+    gap: var(--s_7); padding:var(--8S);  border-radius : var(--r_lg);
+  background: var(--v9);  color:  var(--clr15)
+   }
+.cta-inner ::selection  {
+
+background:var(--cBg);
+color: var(--v9)
+}
+.cta-title
+	{
+font-family:var(--displayFont);font-size: var(--fs2xl_2);font-weight:  700;
+   letter-spacing : var(--TRDISPLAY);  line-height:var(--tmp33); margin-bottom:var(--2S)
+}
+.cta-sub
+{
+  color: var(--cink2_3);
+  font-size : var(--fsBase);
+  max-width:  52ch
+}
+.cta-actions {
+display:  flex;
+flex-wrap:wrap;gap : var(--val39);  flex: none
+}
+.cta-inner .btn-primary  {background:var(--cBg);  color: var(--cText)}
+
+.cta-inner .btn-primary:hover
+{
+  background:  var(--v3)
+}
+.cta-inner .btn-ghost {
+	border-color: var(--CINKLINE);
+				color : var(--clr15)
+  }
+
+
+.cta-inner .btn-ghost:hover {background : rgba(26, 23, 0, .08);  border-color: var(--clr15)}
+
+
