@@ -345,5 +345,30 @@ addonInputs.forEach(function(inp){
   })
 });
 
+orderBtn.addEventListener("click",function(){
+	var now=new Date();
+  var code="FLX-"+String(now.getDate()).padStart(2,"0")+String(now.getMonth()+1).padStart(2,"0")+
+      "-"+String(Math.floor(1000+Math.random()*9000));
+	var p=svc.packages[selectedPkg];
+  summary.classList.add("is-done");
+    summary.innerHTML=
+	'<div class="sd-done">'+
+      '<span class="sd-done-icon">'+chkW+'</span>'+
+        '<span class="sd-sum-label">Order received</span>'+
+    '<h3 class="sd-done-title">'+esc(code)+'</h3>'+
+	  '<p class="sd-done-text">'+esc(svc.name)+' · '+esc(p.name)+' package<br>'+
+        'Estimate: <strong>'+rp(computeTotal())+'</strong></p>'+
+      '<p class="sd-done-text">Our project consultant will contact you within 1 business day to schedule your free scoping call.</p>'+
+	'<a class="btn btn-ghost btn-block" href="index.html#catalog">'+back_svg+' Back to catalog</a>'+
+    '</div>';
+  var h=summary.querySelector(".sd-done-title");
+	if(h){
+    h.setAttribute("tabindex","-1");
+        h.focus({preventScroll:true})
+  }
+    var calm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  summary.scrollIntoView({behavior:calm?"auto":"smooth",block:"nearest"})
+});
+
 selectPkg(selectedPkg)
 })();
