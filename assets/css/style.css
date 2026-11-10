@@ -576,3 +576,327 @@ color: var(--3TextC);
   color:  var(--v9);width : 13px;
    height: 13px;vertical-align: -2px;
 }
+.catalog-toolbar  {
+
+display:  flex; align-items: center;justify-content: space-between;
+	gap:var(--s4_2);
+    flex-wrap : wrap;  margin-bottom: var(--S5)
+}
+
+
+.chips {
+display : flex; align-items: center; gap:var(--2S);
+flex-wrap: wrap;
+}
+
+.chip {
+  position: relative;display:  inline-flex;
+    align-items:center; gap : var(--2S);
+   min-height:44px;
+
+padding:  0 var(--s4_2);  border-radius: var(--rMd);
+  border: 1px solid var(--clin_2); color : var(--c_text_2);  font-size: var(--FSSM);font-weight : 600;
+		transition:background-color var(--DUR),border-color var(--DUR),color var(--DUR),transform var(--durfas_2)
+}
+.chip:hover  {
+      border-color : var(--CLINESTRONG);
+		color:var(--cText);
+		}
+.chip:active {
+        transform:scale(.97);
+}
+
+.chip .count
+{
+display:inline-grid; place-items: center;
+min-width:22px;
+height : 22px;padding:0 6px;  border-radius:6px;
+    background: var(--v3); color: var(--c_text_2);
+		font-size : var(--fsxs_2);
+  font-weight : 600;  font-variant-numeric: tabular-nums
+}
+
+
+.chip.active
+{
+
+  background:var(--v9); border-color : var(--v9); color:  var(--clr15);
+		}
+
+
+.chip.active .count{
+  background : rgba(26,23,0,.14); color:  var(--clr15)
+  }
+
+
+.results-count{font-size:  var(--FSSM); color: var(--3TextC); font-variant-numeric: tabular-nums;}
+.results-count strong{
+    color: var(--cText);
+  font-weight: 600;
+}
+
+.catalog-grid {display:  grid;grid-template-columns : repeat(3,minmax(0,1fr));gap:var(--s4_2) }
+.service-card  {
+    position:  relative;  display:  flex;  flex-direction:column;
+gap:  var(--val39); padding : var(--S5);
+  background: var(--surfaceC);border:1px solid var(--clin_2);  border-radius:var(--r_lg);
+  transition : opacity var(--dur_reveal) var(--outEase), transform var(--dur_reveal) var(--outEase), background-color var(--DUR), border-color var(--DUR)
+}
+.service-card:hover  {
+  background: var(--v3);
+border-color: var(--CLINESTRONG);
+}
+.service-card.hidden
+{
+display : none
+}
+
+.service-card.pop {
+   animation : k_2 var(--durSlow) var(--outEase) both
+  }
+@keyframes k_2 {
+  from{opacity: 0;transform:  translateY(8px)}
+
+  to{opacity:1;transform : none; }
+}
+.sc-top
+   {
+  display : flex;  align-items: center;  justify-content: space-between;  gap: var(--val39);
+}
+.sc-icon
+{
+width: 44px; height: 44px;border-radius:  var(--rMd);
+display: grid;
+      place-items : center;
+    background: var(--v3);  color:  var(--v9);flex: none;
+  transition:background-color var(--DUR),color var(--DUR);
+}
+.sc-icon .icon-lg {
+  width:22px;
+height:  22px;
+}
+.sc-cat
+		{
+		display : inline-flex;
+		align-items : center;
+		gap: var(--2S);font-size: var(--fsxs_2);
+		font-weight : 500;
+	color:  var(--3TextC);
+}
+.sc-cat .dot{
+		width : 7px; height:  7px;
+  border-radius:  50%;
+background: var(--v9);
+  flex:  none;
+}
+[data-category="web"] .dot {border-radius: 1px }
+
+
+[data-category="training"] .dot{border-radius : 1px; transform: rotate(45deg) scale(0.9)}
+
+
+.sc-title  {
+
+   font-family : var(--displayFont);font-size:  var(--lgFs);  font-weight: 600; letter-spacing:var(--trHead); line-height:var(--tmp33);
+margin-top:var(--s_1);
+}
+.sc-desc {
+color: var(--c_text_2); font-size:  var(--FSSM);
+		line-height : var(--lhbod_2);  min-height:calc(var(--FSSM) * 1.6 * 2);display:-webkit-box; -webkit-line-clamp : 2;line-clamp: 2;
+		-webkit-box-orient:vertical;
+
+  overflow: hidden
+}
+
+
+.sc-meta{
+  display: flex;align-items: flex-end;
+justify-content:  space-between;
+  gap: var(--val39);
+margin-top: auto;
+		padding-top:  var(--s4_2);border-top:  1px solid var(--clin_2);
+}
+.sc-price {
+  font-family : var(--displayFont);
+  font-size : var(--lgFs);
+font-weight: 600;
+line-height : 1.2; font-variant-numeric : tabular-nums;
+		white-space:  nowrap;
+}
+
+.sc-price small  {
+font-family: var(--thing21);
+	font-size : var(--fsxs_2);font-weight:500;
+   color: var(--3TextC);
+}
+.sc-price small:first-child  {
+   display:  block;
+margin-bottom: 2px
+}
+.sc-price small:not(:first-child) {margin-left:2px }
+.sc-delivery
+{
+display:  inline-flex;align-items:  center; gap: var(--2S);  font-size: var(--FSSM);
+		color : var(--c_text_2);  white-space:  nowrap
+}
+.sc-delivery .icon-sm  {
+color:var(--3TextC)
+}
+.sc-foot  {
+  display:flex;align-items:  center;  justify-content:  space-between;gap:var(--val39);
+}
+
+
+.sc-rating {
+display:  inline-flex;  align-items: center;
+gap: var(--s_1);
+font-size:  var(--FSSM);
+font-weight : 600; font-variant-numeric: tabular-nums;  white-space: nowrap;
+}
+.sc-rating .icon-sm  {color: var(--v9);  width:14px;  height:14px; }
+.sc-rating em{font-style: normal;  font-weight:400;  color:var(--3TextC); }
+.sc-cta
+{
+    display: inline-flex;
+		align-items:center;  gap : var(--2S); font-size:var(--FSSM); font-weight:600;  color : var(--v9);
+}
+
+
+.sc-cta .icon-sm {
+transition : transform var(--DUR) var(--outEase)
+   }
+.service-card:hover .sc-cta .icon-sm,
+   .service-card:focus-visible .sc-cta .icon-sm  {transform: translate(3px,-3px)}
+@media (min-width : 1000px)  {
+  #catalog-grid{
+      display: flex;
+    flex-direction: column;
+	  gap : 0
+   }
+#catalog-grid .service-card {
+  	display : grid; grid-template-columns:  44px minmax(0,1fr) 8.5rem 6rem 10.5rem 44px; grid-template-areas: "icon title delivery rating price cta" "icon desc delivery rating price cta";
+    column-gap : var(--S5); row-gap: 2px;
+   		align-items : center;  padding: var(--S5) var(--s4_2) var(--S5) var(--S5);
+  background: transparent; border:  0;
+    border-bottom : 1px solid var(--clin_2);
+    		border-radius:  0;
+    }
+
+#catalog-grid .service-card.hidden{
+
+    	display : none
+		}
+  #catalog-grid .service-card::before  {
+  content:"";  position : absolute;
+	left:0;
+      top:  var(--val39);  bottom:  var(--val39);
+    width : 2px;
+	  background:  var(--v9);
+transform:scaleY(0);  transition:  transform var(--DUR) var(--outEase)
+    }
+      #catalog-grid .service-card:hover, #catalog-grid .service-card:focus-visible
+		{
+  	background: var(--surfaceC)
+     }
+    #catalog-grid .service-card:hover::before,#catalog-grid .service-card:focus-visible::before{
+				  transform:  scaleY(1);
+   }
+#catalog-grid .service-card:focus-visible{
+   outline-offset: -3px;
+  border-radius: var(--RSM);
+   }
+#catalog-grid .sc-top,
+		   #catalog-grid .sc-meta,
+		   #catalog-grid .sc-foot {display : contents;}
+
+  #catalog-grid .sc-icon  {grid-area:icon;align-self:start; }
+
+#catalog-grid .service-card:hover .sc-icon{
+   	background: var(--cYellowTint);
+}
+
+#catalog-grid .sc-title {
+  grid-area:  title;margin: 0;align-self:  end;
+   }
+#catalog-grid .sc-desc
+   {
+      grid-area: desc; align-self:start;
+        min-height:  0;max-width:  62ch
+    }
+  #catalog-grid .sc-delivery
+{
+    grid-area:  delivery
+  }
+  #catalog-grid .sc-rating{grid-area: rating; }
+#catalog-grid .sc-price{grid-area:  price;justify-self : end;text-align: right}
+  #catalog-grid .sc-cta{
+     grid-area : cta;  justify-self: end;
+		width:44px;
+	   height: 44px;  justify-content : center;
+		gap: 0; font-size: 0;  border: 1px solid var(--clin_2);border-radius:var(--rMd);  transition:background-color var(--DUR), border-color var(--DUR), color var(--DUR)
+  }
+   #catalog-grid .service-card:hover .sc-cta,#catalog-grid .service-card:focus-visible .sc-cta {background:  var(--v9);border-color: var(--v9);color:var(--clr15); }
+  		#catalog-grid .sc-cat
+      {
+    		  position: absolute;
+	width : 1px; height : 1px;
+
+  overflow:  hidden;
+  	clip-path:inset(50%);  white-space: nowrap
+}
+#catalog-grid .service-card:first-child,#catalog-grid [data-category="web"] + [data-category="mobile"],#catalog-grid [data-category="mobile"] + [data-category="training"] {
+    margin-top: var(--8S);
+
+  border-top: 1px solid var(--clin_2);
+		}
+#catalog-grid .service-card:first-child {margin-top:var(--s_7); }
+
+  #catalog-grid .service-card:first-child .sc-cat ,#catalog-grid [data-category="web"] + [data-category="mobile"] .sc-cat ,#catalog-grid [data-category="mobile"] + [data-category="training"] .sc-cat {
+
+	left:0;bottom: calc(100% + var(--val39)); width:auto;  height: auto;
+
+   		  overflow:visible;
+  	  clip-path:  none;  gap: var(--val39);
+	    font-family: var(--displayFont);
+    font-size: var(--fs_md);
+      font-weight: 600;
+    	color:  var(--cText); pointer-events: none;
+}
+
+    #catalog-grid .service-card .sc-cat .dot  {
+    width: 8px;  height:  8px;
+     }
+}
+.empty-state  {
+   display:  none; flex-direction: column;
+		align-items: center; text-align:center; gap: var(--2S);
+   margin-top : var(--S5);  padding:  var(--8S) var(--S5);border : 1px dashed var(--CLINESTRONG);  border-radius: var(--r_lg);
+	}
+
+
+.empty-state.show{
+		display: flex;
+}
+
+
+.empty-state .es-icon{
+	width:56px;
+height: 56px;
+  	border-radius: var(--rMd);  display:grid;
+  place-items:  center;
+
+  background: var(--v3);color:var(--3TextC);
+      margin-bottom:  var(--2S);
+}
+.empty-state h3 {
+	font-family: var(--displayFont);  font-size:var(--lgFs); font-weight: 600;
+      text-wrap : balance
+}
+
+
+.empty-state p {
+color : var(--c_text_2);
+  font-size : var(--FSSM);
+  max-width: 46ch;
+    margin-bottom:  var(--val39)
+}
