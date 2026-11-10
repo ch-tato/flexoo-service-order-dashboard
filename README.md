@@ -5,11 +5,12 @@ Browse the catalog, open a service, pick a package and add-ons, and send an orde
 
 ## Access it
 
+You may open the following public domain to access the dashboard:
 [flexoo-service-order-dashboard.netlify.app](https://flexoo-service-order-dashboard.netlify.app)
 
 ## Run it
 
-It is plain HTML, CSS and JavaScript, so any static server works:
+Or you may run and open it locally. It is plain HTML, CSS and JavaScript, so any static server works:
 
 ```bash
 python3 -m http.server 3000
