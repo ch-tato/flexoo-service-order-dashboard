@@ -900,3 +900,61 @@ color : var(--c_text_2);
   max-width: 46ch;
     margin-bottom:  var(--val39)
 }
+.testimonials {padding-top : 0}
+.t-grid{
+  display:  grid;
+
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);  gap: var(--s4_2)
+}
+
+.t-card{
+     display : flex;  flex-direction:column;
+			gap:  var(--s4_2);  padding:  var(--s6);
+  background: var(--surfaceC);
+border : 1px solid var(--clin_2);
+       border-radius:var(--r_lg)
+  }
+
+.t-quote-mark{
+width:  20px;height : 20px;color: var(--v9)
+}
+.t-text {
+color:var(--c_text_2);
+   font-size:  var(--fsBase);
+  line-height:1.65; flex:1;
+}
+.t-person
+    {
+		display:flex;  align-items: center; gap: var(--val39);
+	padding-top : var(--s4_2);
+    border-top: 1px solid var(--clin_2)
+   }
+.t-avatar {
+width : 40px;
+height:  40px;border-radius: 50%;
+      display : grid;  place-items : center;font-size: var(--fsxs_2);font-weight:  700;
+background:var(--v3); border: 1px solid var(--clin_2);color : var(--v9);  flex:none
+}
+
+.t-name {font-size: var(--FSSM);  font-weight: 600;}
+.t-role  {
+
+		font-size: var(--fsxs_2);color:  var(--3TextC);
+}
+.t-card:first-child  {
+    grid-row:span 2;
+	padding:var(--s_7);
+gap:  var(--S5);
+    }
+
+.t-card:first-child .t-quote-mark {
+width:32px;height: 32px
+}
+.t-card:first-child .t-text
+{
+   font-size : var(--val27);font-weight: 500;
+		line-height:1.45;  letter-spacing : var(--trHead);
+	   color : var(--cText);max-width: 30ch;
+}
+
+.t-card:first-child .t-avatar {background:  var(--v9);border-color:var(--v9);color:var(--clr15); }
