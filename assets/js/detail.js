@@ -269,4 +269,81 @@ if(related.length){
 }
 
 root.innerHTML=html;
+
+var pkgBtns=root.querySelectorAll(".sd-pkg");
+var addonInputs=root.querySelectorAll("input[data-addon]");
+var linesEl=document.getElementById("sd-sum-lines"),totalEl=document.getElementById("sd-total");
+var depositEl=document.getElementById("sd-deposit");
+var orderBtn=document.getElementById("sd-order");
+var summary=document.getElementById("sd-summary");
+var lastTotal=null;
+
+function computeTotal(){
+	var tot=svc.packages[selectedPkg].price;
+  Object.keys(picked_addons).forEach(function(k){tot+=svc.addons[k].price});
+    return tot
+}
+
+function updateSummary(){
+  var p=svc.packages[selectedPkg];
+	var lines=
+    '<div class="sd-sum-line">'+
+        '<span><span class="sd-sum-pkg">'+esc(p.name)+' package</span><span class="sd-sum-note">'+esc(p.note)+'</span></span>'+
+	  '<span>'+rp(p.price)+'</span>'+
+    '</div>';
+  Object.keys(picked_addons).sort().forEach(function(k){
+      var a=svc.addons[k];
+	lines+=
+        '<div class="sd-sum-line is-addon">'+
+      '<span>+ '+esc(a.name)+'</span>'+
+	    '<span>'+rp(a.price)+'</span>'+
+        '</div>'
+  });
+	linesEl.innerHTML=lines;
+  var total=computeTotal();
+    totalEl.textContent=rp(total);
+  if(lastTotal!==null&&total!==lastTotal){
+	totalEl.classList.remove("is-bump");
+      void totalEl.offsetWidth;
+    totalEl.classList.add("is-bump")
+  }
+	lastTotal=total;
+  depositEl.textContent=svc.category==="training"
+      ?"Training programs are paid upfront per batch or program."
+    :"50% deposit to start: "+rp(Math.round(total/2))+" · rest split by milestones."
+}
+
+function selectPkg(idx){
+    selectedPkg=idx;
+  pkgBtns.forEach(function(b){
+	var on=Number(b.dataset.pkg)===idx;
+      b.classList.toggle("is-selected",on);
+    b.setAttribute("aria-checked",on?"true":"false");
+	b.tabIndex=on?0:-1
+  });
+    updateSummary()
+}
+
+pkgBtns.forEach(function(b){
+  b.addEventListener("click",function(){selectPkg(Number(b.dataset.pkg))});
+	b.addEventListener("keydown",function(e){
+    var dir=(e.key==="ArrowRight"||e.key==="ArrowDown")?1:(e.key==="ArrowLeft"||e.key==="ArrowUp")?-1:0;
+        if(!dir)return;
+      e.preventDefault();
+	var nx=(selectedPkg+dir+pkgBtns.length)%pkgBtns.length;
+    selectPkg(nx);
+        pkgBtns[nx].focus()
+  })
+});
+
+addonInputs.forEach(function(inp){
+    inp.addEventListener("change",function(){
+	var k=inp.dataset.addon;
+      if(inp.checked)picked_addons[k]=true;else delete picked_addons[k];
+    inp.closest(".sd-addon").classList.toggle("is-on",inp.checked);
+        updateSummary()
+  })
+});
+
+selectPkg(selectedPkg)
 })();

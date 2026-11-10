@@ -487,3 +487,192 @@ transform: rotate(45deg); color:var(--clr15); background:var(--v9);  border-colo
 }
 
 
+.sd-aside{position : sticky;top: calc(var(--navH) + var(--S5))}
+.sd-summary
+  {
+       --pad: var(--s6); position:  relative;
+overflow:  hidden;padding: var(--pad);  background : var(--surfaceC);
+    border:1px solid var(--clin_2);
+    border-radius : var(--r_lg);  box-shadow: var(--val51)
+}
+.sd-sum-head {
+display: flex;  flex-direction:column;gap: var(--s_1);
+		padding-bottom:  var(--s4_2);
+		  border-bottom : 1px solid var(--clin_2);
+}
+
+
+.sd-sum-label {font-size:  var(--FSSM); font-weight:500; color:  var(--3TextC)}
+.sd-sum-service
+  {
+	font-family:  var(--displayFont);
+font-size : var(--lgFs);  font-weight:  600;  line-height: var(--tmp33);
+}
+
+.sd-sum-lines  {
+    position: relative;
+	display:flex;flex-direction: column;  gap: var(--val39);
+		padding:var(--s4_2) 0 var(--S5);
+}
+.sd-sum-lines::before{
+    content:"";
+position:  absolute; left: calc(-1 * var(--pad) - 1px);  right: calc(-1 * var(--pad) - 1px);
+bottom: -10px; height:20px;
+		background : radial-gradient(circle at 0 50%, var(--cBg) 0 9px, var(--clin_2) 9px 10px, transparent 10.5px), radial-gradient(circle at 100% 50%, var(--cBg) 0 9px, var(--clin_2) 9px 10px, transparent 10.5px);  pointer-events:  none;
+}
+.sd-sum-lines::after{
+	content:"";position : absolute;
+  left: calc(-1 * var(--pad) + 16px);  right:  calc(-1 * var(--pad) + 16px); bottom : -1px;
+  border-bottom: 2px dashed var(--clin_2)
+}
+
+
+.sd-sum-line {
+	display:flex;  justify-content:space-between; gap: var(--s4_2);  font-size: var(--FSSM);
+}
+
+.sd-sum-line > span:last-child {font-weight:600;  white-space:nowrap;  font-variant-numeric: tabular-nums;}
+.sd-sum-line.is-addon  {color: var(--c_text_2);}
+
+
+.sd-sum-pkg {display:block; font-weight:  600;}
+
+
+.sd-sum-note  {
+display:block;
+    font-size: var(--fsxs_2);
+      color : var(--3TextC)
+  }
+.sd-sum-total{
+display:  flex;flex-wrap : wrap;
+align-items: baseline;
+  justify-content : space-between; gap: var(--s_1) var(--val39);
+		padding-top:var(--S5);
+}
+.sd-sum-total span{font-size:  var(--FSSM);color: var(--c_text_2);white-space : nowrap;}
+
+
+.sd-sum-total strong
+   {
+  margin-left: auto;
+}
+
+.sd-sum-total strong {
+font-family: var(--displayFont);
+      font-size : var(--fs2xl_2); font-weight:700;  letter-spacing:  var(--trHead);line-height:1.15;  font-variant-numeric:tabular-nums;
+white-space:nowrap;padding-bottom: 2px;
+background: linear-gradient(var(--v9),var(--v9)) left bottom / 0% 2px no-repeat;
+   }
+.sd-sum-total strong.is-bump {
+
+    animation:goTotalsweep 640ms var(--outEase);
+}
+
+
+@keyframes goTotalsweep {
+
+   0%{
+   background-size: 0% 2px;background-position: left bottom;
+		}
+     45%  {background-size:100% 2px; background-position:left bottom}
+
+	55% {
+    		background-size : 100% 2px;
+	background-position:  right bottom;
+		}
+	100%  {
+		background-size: 0% 2px; background-position: right bottom;
+   }
+}
+.sd-sum-deposit  {
+  font-size:var(--fsxs_2);  color: var(--3TextC); margin : var(--2S) 0 var(--S5); text-align: right
+}
+.sd-ask
+{
+margin-top: var(--2S);
+  }
+.sd-assure  {
+
+display:flex;
+flex-direction : column;  gap:var(--2S);
+margin-top:  var(--S5);padding-top : var(--s4_2);
+  border-top: 1px solid var(--clin_2)
+}
+
+.sd-assure li{
+	display: flex;
+align-items : center;
+gap:  var(--2S);
+
+  font-size:var(--FSSM);  color: var(--c_text_2)
+}
+.sd-assure .icon-sm  {
+color : var(--v9);
+}
+
+
+.sd-summary.is-done  {
+  		border-color : var(--lineYellowC);
+}
+.sd-done  {
+
+display: flex;flex-direction : column;
+align-items: flex-start;  gap: var(--2S);
+}
+
+
+.sd-done-icon {
+      width: 48px; height:48px; border-radius:50%;
+	display:grid; place-items:center; background : var(--v9);
+     color:  var(--clr15);
+
+   margin-bottom : var(--2S);
+}
+
+.sd-done-icon svg
+{
+  width: 22px;
+height : 22px
+}
+.sd-done-title {
+font-family:var(--displayFont);font-size: var(--val27);
+    font-weight:700;letter-spacing:  0.04em; font-variant-numeric: tabular-nums;color: var(--v9);
+    padding:  var(--s_1) var(--val39);margin: var(--s_1) 0 var(--val39);  border : 2px solid var(--v9);
+border-radius:  var(--RSM);
+  transform:  rotate(-2deg);
+animation: anim5 var(--durSlow) var(--outEase) both;
+}
+
+
+@keyframes anim5
+{
+
+  from{
+				opacity:0;
+		transform : rotate(-2deg) scale(1.18)
+		}
+  to{
+	opacity:1;
+      transform:  rotate(-2deg) scale(1);
+  }
+}
+.sd-done-text {
+font-size: var(--FSSM); color:var(--c_text_2);
+    line-height:  1.6
+}
+.sd-done-text strong {
+    color: var(--cText)
+}
+
+
+.sd-done .btn {
+  margin-top: var(--val39)
+}
+
+.sd-related
+{
+padding-top:0;
+}
+.sd-related-grid  {
+    grid-template-columns : repeat(2,minmax(0,1fr));
+}
