@@ -565,6 +565,12 @@ font-variant-numeric : tabular-nums;
    font-style:normal;color : var(--v9)
 }
 
+.stat-count {
+  display: inline-block;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
 
 .stat-label
 {

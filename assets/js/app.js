@@ -157,4 +157,51 @@ document.addEventListener("keydown",function(e){
 });
 
 applyFilters()
+
+// Stat count-up: animates each .stat-num from 0 to its value once, when half visible.
+var statNums=document.querySelectorAll(".stat-num");
+var reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(statNums.length&&!reduceMotion&&"IntersectionObserver" in window&&window.requestAnimationFrame){
+  var COUNT_MS=1200;
+  var easeOut=function(t){return 1-Math.pow(1-t,3)};
+  var counters=[];
+  statNums.forEach(function(el){
+    var node=null;
+    for(var i=0;i<el.childNodes.length;i++){
+      var c=el.childNodes[i];
+      if(c.nodeType===3&&/\d/.test(c.nodeValue)){node=c;break}
+    }
+    if(!node)return;
+    var raw=node.nodeValue.trim(),target=parseFloat(raw);
+    if(isNaN(target))return;
+    var decimals=(raw.split(".")[1]||"").length;
+    var span=document.createElement("span");
+    span.className="stat-count";
+    span.textContent=(0).toFixed(decimals);
+    node.parentNode.replaceChild(span,node);
+    counters.push({el:el,span:span,target:target,decimals:decimals,final:raw});
+  });
+  var runCounter=function(c){
+    // Lock the width to the final value so the suffix never shifts.
+    c.span.textContent=c.final;
+    c.span.style.minWidth=c.span.getBoundingClientRect().width+"px";
+    c.span.textContent=(0).toFixed(c.decimals);
+    var start=null;
+    var step=function(now){
+      if(start===null)start=now;
+      var t=Math.min((now-start)/COUNT_MS,1);
+      c.span.textContent=t<1?(c.target*easeOut(t)).toFixed(c.decimals):c.final;
+      if(t<1)requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  var statIO=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      statIO.unobserve(e.target);
+      counters.forEach(function(c){if(c.el===e.target)runCounter(c)});
+    });
+  },{threshold:0.5});
+  counters.forEach(function(c){statIO.observe(c.el)});
+}
 })();
