@@ -287,28 +287,31 @@ color:  var(--cText);
 }
 .nav-cta {min-height:44px;  padding:0 var(--s4_2);  font-size:var(--FSSM)}
 .client-chip {
-		display:flex;  align-items : center;  gap: var(--2S);
-		min-height:  44px; padding: 4px var(--val39) 4px 4px;border: 1px solid var(--clin_2);border-radius:var(--pillR); background:  var(--surfaceC);  text-align : left;  transition: border-color var(--DUR);
+  display: flex; align-items: center; gap: 10px;
+  min-height: 44px; padding: 4px 10px 4px 4px;
+  border: 1px solid var(--clin_2); border-radius: var(--pillR);
+  background: var(--surfaceC); color: var(--cText); text-align: left;
+  transition: border-color var(--DUR), background-color var(--DUR);
 }
-.client-chip:hover {border-color: var(--CLINESTRONG);}
+.client-chip:hover { border-color: var(--CLINESTRONG); background: var(--v3); }
 .avatar {
-width:34px;
-height: 34px;  border-radius : 50%;
-   background:var(--v9);
-color:var(--clr15); display:  grid;
-place-items:  center;
-  font-size: var(--fsxs_2);  font-weight:  700;flex: none;
-  }
-.client-chip .cc-name  {
-		font-size : var(--FSSM);
-   font-weight: 600;  line-height: 1.2;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--v9); color: var(--clr15);
+  display: grid; place-items: center; flex: none;
+  font-size: var(--fsxs_2); font-weight: 700; letter-spacing: .02em;
+  box-shadow: 0 0 0 2px var(--surfaceC), 0 0 0 3px var(--lineYellowC);
 }
-
-.client-chip .cc-role  {
-   font-size:  var(--fsxs_2);
-	color:var(--3TextC);
-   line-height : 1.2;
+.client-chip .cc-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.client-chip .cc-name {
+  font-size: var(--FSSM); font-weight: 600; line-height: 1.2;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 14ch;
 }
+.client-chip .cc-role { font-size: var(--fsxs_2); color: var(--3TextC); line-height: 1.2; }
+.client-chip .cc-chevron {
+  width: 16px; height: 16px; flex: none; color: var(--3TextC);
+  transition: color var(--DUR), transform var(--DUR) var(--outEase);
+}
+.client-chip:hover .cc-chevron { color: var(--cText); transform: translateY(1px); }
 
 
 .hero  {padding:  calc(var(--navH) + var(--val45)) 0 var(--val45) }
@@ -1186,7 +1189,7 @@ grid-template-columns:1fr;
 .client-chip  {
     	padding: 4px;
 }
-.client-chip > span:not(.avatar) {display:  none; }
+.client-chip > :not(.avatar) {display:  none; }
 }
 @media (max-width: 420px)
 {
